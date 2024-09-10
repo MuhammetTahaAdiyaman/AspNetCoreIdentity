@@ -1,0 +1,36 @@
+﻿@model UserCreateModel
+@{
+    Layout = "_Layout";
+}
+<form asp-action="Create" asp-controller="Home" method="post" class="p-3 w-75 mx-auto shadow">
+    <div class="mb-3">
+        <span class="text-danger" asp-validation-for="@Model.Username"></span>
+        <label>Kullanıcı Adı: </label>
+        <input asp-for="@Model.Username" class="form-control"/>
+    </div>
+    <div class="mb-3">
+        <span class="text-danger" asp-validation-for="@Model.Password"></span>
+        <label>Şifre: </label>
+        <input type="password" asp-for="@Model.Password" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <span class="text-danger" asp-validation-for="@Model.ConfirmPassword"></span>
+        <label>Şifre Tekrar: </label>
+        <input type="password" asp-for="@Model.ConfirmPassword" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <span class="text-danger" asp-validation-for="@Model.Email"></span>
+        <label>E-Mail: </label>
+        <input type="email" asp-for="@Model.Email" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <span class="text-danger" asp-validation-for="@Model.Gender"></span>
+        <label>Cinsiyet: </label>
+        <input asp-for="@Model.Gender" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+
+    <div class="text-danger mt-2" asp-validation-summary="ModelOnly"></div>
+</form>
